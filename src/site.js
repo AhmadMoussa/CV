@@ -75,7 +75,8 @@ export default function site(cv, { reload = '' } = {}) {
   <meta property="og:title" content="${esc(cv.name)} — ${esc(plain(cv.title))}">
   <meta property="og:description" content="${esc(plain(cv.bio))}">
   <meta property="og:type" content="website">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch {}</script>
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="site.css">
@@ -104,7 +105,6 @@ export default function site(cv, { reload = '' } = {}) {
     <header class="nav">
       <div class="nav-inner">
         <nav>
-          <a class="mark" href="#top" aria-label="Back to top"><img src="favicon.svg" alt="" width="24" height="24"></a>
           <a href="#about">About</a>
           <a href="#experience">Experience</a>
           <a href="#education">Education</a>
@@ -119,7 +119,7 @@ export default function site(cv, { reload = '' } = {}) {
 
     <main id="top">
       <section class="hero">
-        <canvas class="sketch" width="120" height="120" aria-label="Generative Truchet pattern — click to regenerate" role="img"></canvas>
+        ${cv.hero_image ? `<img class="hero-image" src="${esc(cv.hero_image)}" alt="" width="104" height="104">` : ''}
         <h1>${md(cv.headline || cv.title)}</h1>
         ${cv.tagline ? `<p class="lead">${md(cv.tagline)}</p>` : ''}
         <a class="btn btn-soft" href="#experience">View Experience${icon('arrowRight', 16)}</a>
@@ -169,7 +169,6 @@ export default function site(cv, { reload = '' } = {}) {
     </footer>
   </div>
 
-  <script src="sketch.js" defer></script>
   <script>
     const nav = document.querySelector('.nav');
     addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });

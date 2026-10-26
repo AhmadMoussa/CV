@@ -1,10 +1,10 @@
 @page { size: A4; margin: 14mm 16mm; }
 
 :root {
-  --ink: #1a0a06;
-  --muted: #6b5d57;
-  --line: #e4dcd6;
-  --accent: #e55639;
+  --ink: #141210;
+  --muted: #5c544c;
+  --line: #e3ddd4;
+  --accent: #d45800;
 }
 
 * { box-sizing: border-box; }

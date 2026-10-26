@@ -29,7 +29,7 @@ fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(path.join(dist, 'fonts'), { recursive: true });
 fs.cpSync(path.join(root, 'public'), dist, { recursive: true });
 for (const f of FONTS) fs.copyFileSync(path.join(root, 'node_modules', f), path.join(dist, 'fonts', path.basename(f)));
-for (const f of ['fonts.css', 'site.css', 'print.css', 'sketch.js']) fs.copyFileSync(path.join(root, 'src', f), path.join(dist, f));
+for (const f of ['fonts.css', 'site.css', 'print.css']) fs.copyFileSync(path.join(root, 'src', f), path.join(dist, f));
 fs.writeFileSync(path.join(dist, 'index.html'), site(cv, { reload }));
 fs.writeFileSync(path.join(dist, 'print.html'), print(cv, { reload }));
 

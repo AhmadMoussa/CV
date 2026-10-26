@@ -31,9 +31,8 @@ npm run build    # one-off build into dist/
 | `cv.yaml` | All CV content |
 | `src/site.js`, `src/site.css` | Website template and styles |
 | `src/print.js`, `src/print.css` | PDF template and styles (A4) |
-| `src/sketch.js` | The generative Truchet badge in the hero (click it) |
 | `src/build.js`, `src/dev.js` | Build script and live-reload dev server |
-| `public/` | Copied as-is to the site root (favicon, photo, `CNAME`, …) |
+| `public/` | Copied as-is to the site root (photo, hero image, logos, favicon, `CNAME`, …) |
 
 ## Photo and company logos
 
@@ -57,5 +56,5 @@ To use your own domain, add a `public/CNAME` file containing the domain (e.g. `c
 ## Notes
 
 - Fonts (Geist and Habibi) are self-hosted from `@fontsource`, so the site makes no requests to Google Fonts.
-- The site follows the visitor's light/dark system setting, with a toggle in the nav. The PDF is always light.
+- The site follows the visitor's light/dark system setting, with a toggle in the nav. Colours match [gorillasun.com](https://gorillasun.com). The PDF is always light.
 - Icons are from [Lucide](https://lucide.dev) (ISC). The Gorilla Sun sun is from [Font Awesome Free](https://fontawesome.com/license/free) (CC BY 4.0).

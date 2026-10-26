@@ -27,6 +27,8 @@ about: >-
 
 # Square image in /public (remove the line to show your initials instead)
 photo: photo.jpg
+# Square image in /public, shown as a circle above the headline (optional)
+hero_image: hero.webp
 
 # Line under "Let's Connect" at the bottom of the website
 contact_note: Happy to talk product, creative coding, or new opportunities.
