@@ -13,7 +13,7 @@ body {
   margin: 0;
   color: var(--ink);
   font: 400 9.4pt/1.42 'Geist', system-ui, sans-serif;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
@@ -51,7 +51,7 @@ h2 {
 .desc { color: var(--muted); margin-top: 1pt; }
 
 ul { padding-left: 13pt; margin-top: 2pt; }
-li { margin-top: 1.5pt; }
+li { margin-top: 2pt; }
 li::marker { color: var(--muted); }
 li ul { list-style: circle; margin-top: 0; }
 
