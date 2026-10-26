@@ -61,6 +61,7 @@ export default function print(cv, { reload = '' } = {}) {
 <head>
   <meta charset="utf-8">
   <title>${esc(cv.name)} — CV</title>
+  <meta name="robots" content="noindex">
   <meta name="author" content="${esc(cv.name)}">
   <meta name="description" content="${esc(plain(cv.title))}">
   <link rel="stylesheet" href="fonts.css">

@@ -16,6 +16,19 @@ export const plain = (s = '') => String(s).replace(/\*\*?|\[|\]\([^)]*\)/g, '');
 
 export const range = (start, end) => [start, end].filter(Boolean).join(' – ');
 
+// "Sept 2024" → "2024-09", "2021" → "2021", "Present" → ''
+const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+export const isoMonth = (s = '') => {
+  const year = String(s).match(/\b(\d{4})\b/)?.[1];
+  if (!year) return '';
+  const m = MONTHS.indexOf(String(s).trim().slice(0, 3).toLowerCase());
+  return m < 0 ? year : `${year}-${String(m + 1).padStart(2, '0')}`;
+};
+
+// Dates as <time> elements so crawlers can read them
+export const time = (s) => (isoMonth(s) ? `<time datetime="${isoMonth(s)}">${esc(s)}</time>` : esc(s));
+export const timeRange = (start, end) => [start, end].filter(Boolean).map(time).join(' – ');
+
 export const initials = (name) => name.split(/\s+/).map((w) => w[0]).join('').slice(0, 2).toUpperCase();
 
 export const host = (url = '') => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');

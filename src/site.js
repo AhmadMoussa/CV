@@ -1,5 +1,6 @@
 // Website template — renders cv.yaml into index.html
-import { esc, md, plain, range, initials, icon, linkIcon, list, pdfName } from './lib.js';
+import { esc, md, plain, initials, icon, linkIcon, list, pdfName, time, timeRange } from './lib.js';
+import { jsonLd } from './machine.js';
 
 const bullets = (items) =>
   items?.length
@@ -30,7 +31,7 @@ const experience = (job) => {
                 <h3>${md(role.title)}</h3>
                 <p class="meta">${companyName(job)}${job.location ? ` <span class="dot">•</span> ${esc(job.location)}` : ''}</p>
               </div>
-              <p class="date">${esc(range(role.start || job.start, role.end || job.end))}</p>
+              <p class="date">${timeRange(role.start || job.start, role.end || job.end)}</p>
             </div>
             ${i === 0 && job.description ? `<p class="desc">${md(job.description)}</p>` : ''}
             ${bullets(role.bullets)}
@@ -47,7 +48,7 @@ const education = (ed) => `
         <h3>${md(ed.degree)}</h3>
         <p class="meta">${esc(ed.school)}${ed.location ? ` <span class="dot">•</span> ${esc(ed.location)}` : ''}</p>
       </div>
-      <p class="date">${esc(ed.date)}</p>
+      <p class="date">${time(ed.date)}</p>
     </div>
     ${bullets(ed.bullets)}
   </article>`;
@@ -58,8 +59,12 @@ const skillGroup = (g) => `
     <ul class="chips">${list(g.items, (s) => `<li>${md(s)}</li>`)}</ul>
   </div>`;
 
-export default function site(cv, { reload = '' } = {}) {
+export default function site(cv, { reload = '', modified = '' } = {}) {
   const pdf = pdfName(cv);
+  const title = `${cv.name} — ${plain(cv.title)}`;
+  const abs = (p = '') => new URL(p, `${cv.url.replace(/\/$/, '')}/`).href;
+  // JSON inside <script> must not contain a closing tag
+  const ld = JSON.stringify(jsonLd(cv, modified)).replace(/</g, '\\u003c');
   const year = new Date().getFullYear();
   const avatar = cv.photo
     ? `<img class="avatar" src="${esc(cv.photo)}" alt="${esc(cv.name)}">`
@@ -70,11 +75,22 @@ export default function site(cv, { reload = '' } = {}) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${esc(cv.name)} — ${esc(plain(cv.title))}</title>
+  <title>${esc(title)}</title>
   <meta name="description" content="${esc(plain(cv.bio))}">
-  <meta property="og:title" content="${esc(cv.name)} — ${esc(plain(cv.title))}">
+  <link rel="canonical" href="${abs()}">
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="${esc(cv.name)}">
+  <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(plain(cv.bio))}">
-  <meta property="og:type" content="website">
+  <meta property="og:url" content="${abs()}">
+  <meta property="og:image" content="${abs('og.png')}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${esc(title)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="alternate" type="text/markdown" href="cv.md" title="CV (Markdown)">
+  <link rel="alternate" type="application/json" href="resume.json" title="CV (JSON Resume)">
+  <script type="application/ld+json">${ld}</script>
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch {}</script>
@@ -85,7 +101,7 @@ export default function site(cv, { reload = '' } = {}) {
   <aside class="sidebar">
     <div class="sidebar-top">
       ${avatar}
-      <h2 class="name">${esc(cv.name)}</h2>
+      <h1 class="name">${esc(cv.name)}</h1>
       <p class="title">${md(cv.title)}</p>
       <p class="bio">${md(cv.bio)}</p>
     </div>
@@ -120,7 +136,7 @@ export default function site(cv, { reload = '' } = {}) {
     <main id="top">
       <section class="hero">
         ${cv.hero_image ? `<img class="hero-image" src="${esc(cv.hero_image)}" alt="" width="104" height="104">` : ''}
-        <h1>${md(cv.headline || cv.title)}</h1>
+        <p class="headline">${md(cv.headline || cv.title)}</p>
         ${cv.tagline ? `<p class="lead">${md(cv.tagline)}</p>` : ''}
         <a class="btn btn-soft" href="#experience">View Experience${icon('arrowRight', 16)}</a>
       </section>

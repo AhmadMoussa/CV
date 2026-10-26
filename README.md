@@ -3,8 +3,12 @@
 A small static CV site whose downloadable PDF is generated from the same data, so the two never drift apart.
 
 ```
-cv.yaml  ──►  dist/index.html            (the website)
-         ──►  dist/Ahmad_Moussa_CV.pdf   (the PDF, printed by headless Chrome)
+cv.yaml  ──►  index.html            the website (with schema.org JSON-LD)
+         ──►  Ahmad_Moussa_CV.pdf   the PDF, printed by headless Chrome
+         ──►  og.png                link-preview image for LinkedIn, Slack, X, …
+         ──►  cv.md, llms.txt       plain-text versions for AI agents and LLMs
+         ──►  resume.json           JSON Resume (jsonresume.org) for résumé tools
+         ──►  robots.txt, sitemap.xml
 ```
 
 ## Updating your CV
@@ -31,6 +35,8 @@ npm run build    # one-off build into dist/
 | `cv.yaml` | All CV content |
 | `src/site.js`, `src/site.css` | Website template and styles |
 | `src/print.js`, `src/print.css` | PDF template and styles (A4) |
+| `src/machine.js` | JSON-LD, JSON Resume, Markdown, llms.txt, robots.txt and sitemap generators |
+| `src/og.js` | Link-preview card template (screenshotted to `og.png`) |
 | `src/build.js`, `src/dev.js` | Build script and live-reload dev server |
 | `public/` | Copied as-is to the site root (photo, hero image, logos, favicon, …) |
 
