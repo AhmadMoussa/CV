@@ -9,43 +9,54 @@
 name: Ahmad Moussa
 # Where the site lives (used for links in previews, search results and AI-readable files)
 url: https://ahmadmoussa.net
-title: Product Manager & Creative Coder
+title: Product Manager & Developer Relations
 # Large heading + sub-heading at the top of the website
-headline: Product, code & generative art
+headline: Product & developer relations for creative tech
 tagline: >-
-  Building products and communities at the intersection of
-  programming and digital art.
+  I lead product teams and create the tutorials, talks and communities
+  that help developers build with code.
 # Short blurb in the website sidebar
 bio: >-
-  Product manager, educator and creative coder with a background
-  in machine learning and a love for generative systems.
-# "About" section on the website and summary line on the PDF
+  Product manager and developer educator. Led a 5-developer team through
+  a full platform redesign; grew a creative-coding publication to 2,000+
+  subscribers.
+# "About" section on the website and summary on the PDF
 about: >-
-  I'm a product manager and creative coder with a background in computer
-  science and machine learning. Most recently I led product at fxhash, a
-  generative art marketplace, and since 2021 I've run Gorilla Sun, an
-  educational platform about creative coding and generative art read by
-  thousands every month.
+  I'm a product manager and developer educator with a background in computer
+  science and machine learning. At fxhash, a generative art marketplace, I led
+  a complete redesign of the platform with a team of five developers, after
+  starting out as editorial and community lead for its 50k+ audience. Since
+  2021 I've run Gorilla Sun, a publication about creative coding with 2,000+
+  subscribers, 200+ articles, and talks and workshops at universities and
+  events across Europe.
+# Shown as a badge on the website and under your title on the PDF
+availability: Open to remote roles
+work_authorisation: Full work authorisation in Germany
 
 # Square image in /public (remove the line to show your initials instead)
 photo: photo.jpg
+# Also put the photo on the PDF (common in Germany, often left out for US/UK roles)
+pdf_photo: true
 # Square image in /public, shown as a circle above the headline (optional)
 hero_image: hero.webp
 
 # Line under "Let's Connect" at the bottom of the website
-contact_note: Happy to talk product, creative coding, or new opportunities.
+contact_note: Happy to talk about remote product and developer relations roles.
 
 location: Düsseldorf, Germany
+timezone: CET
 email: ahmad@gorillasun.com
 phone: +49 1575 0606799
 website: https://gorillasun.com
 
 # Small facts shown under your bio in the website sidebar.
-# icon: pin | briefcase | languages | globe | mail
+# icon: pin | briefcase | languages | globe | mail | check
 facts:
-  - { icon: pin, text: "Düsseldorf, Germany" }
-  - { icon: briefcase, text: "5+ years in product & content" }
-  - { icon: languages, text: "Speaks EN · DE · FR · AR" }
+  - { icon: pin, text: "Düsseldorf, Germany (CET)" }
+  - { icon: globe, text: "Open to remote roles" }
+  - { icon: briefcase, text: "5+ years in product & developer education" }
+  - { icon: languages, text: "English, German, French, Arabic (C2)" }
+  - { icon: check, text: "Full work authorisation in Germany" }
 
 # Social links: icon buttons above "Download CV" on the website, and
 # in the PDF header (add `pdf: false` to a link to leave it off the PDF).
@@ -64,44 +75,43 @@ experience:
     url: https://www.fxhash.xyz
     logo: logos/fxhash.png
     location: Remote
-    start: Sept 2024
+    start: Sep 2024
     end: May 2026
     description: >-
       Generative art marketplace enabling artists to publish on-chain,
       code-based artworks to a global collector base.
     roles:
       - title: Product Manager
-        start: June 2025
+        start: Jun 2025
         end: May 2026
         bullets:
-          - text: Led ideation, design, and delivery
-            sub:
-              - Owned product lifecycle from concept to launch across cross-functional teams (engineering, design, marketing).
-              - Defined product requirements, user flows, and roadmap aligned with business goals.
-              - Collaborated closely with engineers on full-stack implementation.
+          - Led a complete, large-scale redesign of the fxhash platform from concept to launch, managing a team of **5 developers**.
+          - Coordinated the relaunch with marketing for a marketplace with sales in the **thousands**.
+          - Owned the roadmap, product requirements and user flows, aligning engineering, design and marketing with business goals.
+          - Worked hands-on with engineers on the full-stack implementation.
       - title: Editorial & Community Lead
-        start: Sept 2024
-        end: June 2025
+        start: Sep 2024
+        end: Jun 2025
         bullets:
-          - Created and managed editorial content for a 50k+ audience across social platforms.
-          - Developed content strategy to grow engagement and handled community interaction.
+          - Ran editorial and community channels for a **50k+** audience of artists and collectors across social platforms.
+          - Developed the content strategy to grow engagement and was the main point of contact for the community.
+          - Promoted to Product Manager in June 2025.
 
   - company: Gorilla Sun
     url: https://gorillasun.com
     logo: logos/gorillasun.svg
     location: Remote
-    start: April 2021
+    start: Apr 2021
     end: Present
     roles:
-      - title: Founder, Educator, Programming & Writing
+      - title: Founder & Developer Educator
         bullets:
-          - Built a leading educational platform focused on creative coding and generative art.
-          - Produced technical content bridging programming and digital art for a global audience.
-          - Developed tutorials, long-form articles, interviews, and newsletters on JavaScript, generative systems, and visual art.
+          - Built and run an independent publication teaching creative coding and generative art to developers and artists worldwide.
+          - Write tutorials, long-form articles, interviews and a newsletter on JavaScript, p5.js and generative systems.
           - "**Talks & Workshops:** Zürcher Hochschule der Künste (2023), Universität Bielefeld (2024), Wintercircus Ghent (2024), Trillitech London (2024)"
         # Shown as stat cards on the website, as a "Key Results" line on the PDF
         results:
-          - { value: "2000+", label: subscribed monthly readers }
+          - { value: "2,000+", label: subscribed monthly readers }
           - { value: "1M+", label: impressions online }
           - { value: "200+", label: articles & newsletters published }
 
@@ -110,7 +120,7 @@ education:
   - school: Waseda University
     degree: Master of Engineering, Computer Science
     location: Tokyo, Japan
-    date: March 2021
+    date: Mar 2021
     bullets:
       - Machine learning and neural networks for multimedia applications (computer vision, generative sound).
       - "**Papers published:** *Generating and Extraction of Color Palettes with Adversarial Variational Auto-encoders* (ICICT 2021, Springer Nature), *Audio Translation with Conditional Generative Adversarial Networks* (ICAIIC 2020, IEEE)"
@@ -118,7 +128,7 @@ education:
   - school: American University of Beirut
     degree: Bachelor of Science, Computer Science
     location: Beirut, Lebanon
-    date: April 2018
+    date: Apr 2018
     bullets:
       - Software architecture & development, data structures, algorithms, Java, C/C++.
       - Semester abroad at Concordia University (Montreal, Canada, 2017).
@@ -126,11 +136,22 @@ education:
 # ─── Skills & interests ──────────────────────────────────────
 # Shown as tag groups on the website, as one line each on the PDF.
 skills:
+  - label: Product
+    items: [Product strategy, Roadmapping, Requirements & user flows, Ideation, System design, Team leadership, Go-to-market]
+  - label: Developer relations
+    items: [Technical writing, Developer education, Public speaking & workshops, Community building, Content strategy, Copywriting, Video editing]
   - label: Technologies
     items: [JavaScript, React, Next.js, Python, Git, Processing, p5.js]
-  - label: Skills
-    items: [Ideation, System Design, Strategic Planning, Marketing, Copywriting, Music Production, Video Editing]
-  - label: Languages (fluent)
-    items: [English, German, French, Arabic]
+  - label: Languages (CEFR)
+    items: [English (C2), German (C2), French (C2), Arabic (C2)]
   - label: Interests
-    items: [Weightlifting, Music, Programming, Board & Video Games, "*The Office*"]
+    items: [Weightlifting, Music production, Board & video games, "*The Office*"]
+
+# ─── Impressum / legal notice ────────────────────────────────
+# Published at /impressum.html (linked in the footer) once an address is
+# filled in. A c/o or virtual-office address works if you'd rather not
+# publish your home address.
+legal:
+  address:
+    # - Musterstraße 1
+    # - 40223 Düsseldorf

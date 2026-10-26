@@ -27,18 +27,23 @@ a { color: inherit; text-decoration: none; }
 p, ul, h1, h2 { margin: 0; }
 strong { font-weight: 600; }
 
-header { padding-bottom: 10pt; border-bottom: 1px solid var(--ink); }
+header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16pt; padding-bottom: 8pt; border-bottom: 1px solid var(--ink); }
+.photo { width: 25mm; height: 25mm; object-fit: cover; flex: none; }
+.status { margin-top: 3pt; font-size: 9pt; font-weight: 500; }
+.status .sep { color: var(--muted); margin: 0 5pt; }
 h1 { font: 400 25pt/1.1 'Habibi', Georgia, serif; letter-spacing: -0.02em; }
 .title { font-size: 11pt; color: var(--muted); margin-top: 2pt; }
-.contact { margin-top: 6pt; font-size: 9pt; }
+.contact { margin-top: 5pt; font-size: 9pt; }
+.nw { white-space: nowrap; }
 .contact .sep { color: var(--line); margin: 0 6pt; }
 
-.summary { margin-top: 10pt; color: var(--muted); }
+.summary { margin-top: 8pt; color: var(--muted); }
 
 section { margin-top: 13pt; }
 h2 {
   font: 600 8.2pt/1 'Geist', sans-serif; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--accent); padding-bottom: 4pt; margin-bottom: 7pt; border-bottom: 1px solid var(--line);
+  color: var(--accent); padding-bottom: 4pt; margin-bottom: 6pt; border-bottom: 1px solid var(--line);
+  break-after: avoid;
 }
 
 .entry { break-inside: avoid; }

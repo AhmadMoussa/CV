@@ -40,6 +40,16 @@ npm run build    # one-off build into dist/
 | `src/build.js`, `src/dev.js` | Build script and live-reload dev server |
 | `public/` | Copied as-is to the site root (photo, hero image, logos, favicon, …) |
 
+## Useful fields in `cv.yaml`
+
+| Field | Effect |
+| --- | --- |
+| `availability`, `work_authorisation` | Badge on the website, status line under your title on the PDF, and in `llms.txt` |
+| `pdf_photo` | `true` puts your photo on the PDF (common in Germany; often left out for US/UK roles) |
+| `timezone` | Shown next to your location (useful for remote roles) |
+| `legal.address` | Publishes `/impressum.html` (Impressum + privacy notice) and links it in the footer |
+| `links[].pdf` | `false` keeps a link off the PDF header |
+
 ## Photo and company logos
 
 Images live in `public/` and are referenced from `cv.yaml`:

@@ -51,10 +51,11 @@ export default function print(cv, { reload = '' } = {}) {
   const contact = [
     `<a href="mailto:${esc(cv.email)}">${esc(cv.email)}</a>`,
     cv.phone && `<a href="tel:${esc(cv.phone.replace(/[^\d+]/g, ''))}">${esc(cv.phone)}</a>`,
-    cv.location && esc(cv.location),
+    cv.location && esc(`${cv.location}${cv.timezone ? ` (${cv.timezone})` : ''}`),
     cv.website && `<a href="${esc(cv.website)}">${esc(host(cv.website))}</a>`,
     ...(cv.links || []).filter((l) => l.url !== cv.website && l.pdf !== false).map((l) => `<a href="${esc(l.url)}">${esc(l.label)}</a>`),
   ].filter(Boolean);
+  const status = [cv.availability, cv.work_authorisation].filter(Boolean).map(md);
 
   return `<!doctype html>
 <html lang="en">
@@ -69,9 +70,13 @@ export default function print(cv, { reload = '' } = {}) {
 </head>
 <body>
   <header>
-    <h1>${esc(cv.name)}</h1>
-    <p class="title">${md(cv.title)}</p>
-    <p class="contact">${contact.join('<span class="sep">|</span>')}</p>
+    <div>
+      <h1>${esc(cv.name)}</h1>
+      <p class="title">${md(cv.title)}</p>
+      <p class="contact">${contact.map((c) => `<span class="nw">${c}</span>`).join('<span class="sep">|</span>')}</p>
+      ${status.length ? `<p class="status">${status.join('<span class="sep">·</span>')}</p>` : ''}
+    </div>
+    ${cv.pdf_photo && cv.photo ? `<img class="photo" src="${esc(cv.photo)}" alt="${esc(cv.name)}">` : ''}
   </header>
 
   ${cv.about ? `<p class="summary">${md(cv.about)}</p>` : ''}

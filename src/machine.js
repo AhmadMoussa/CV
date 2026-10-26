@@ -4,7 +4,14 @@ import { plain, range, isoMonth, host, pdfName } from './lib.js';
 
 const abs = (cv, p = '') => new URL(p, cv.url.endsWith('/') ? cv.url : `${cv.url}/`).href;
 const city = (cv) => (cv.location || '').split(',')[0].trim();
-const languages = (cv) => cv.skills?.find((g) => /^languages?/i.test(g.label))?.items || [];
+// "German (C2)" → { language: 'German', level: 'C2' }
+const languages = (cv) =>
+  (cv.skills?.find((g) => /^languages?/i.test(g.label))?.items || []).map((item) => {
+    const [, language, level] = plain(item).match(/^(.*?)\s*(?:\(([ABC][12])\))?$/);
+    return { language, level };
+  });
+const status = (cv) => [cv.availability, cv.work_authorisation].filter(Boolean).map(plain);
+const place = (cv) => `${cv.location}${cv.timezone ? ` (${cv.timezone})` : ''}`;
 const otherSkills = (cv) => cv.skills?.filter((g) => !/^(languages?|interests?)/i.test(g.label)) || [];
 const interests = (cv) => cv.skills?.find((g) => /^interests?/i.test(g.label))?.items || [];
 
@@ -40,7 +47,7 @@ export function jsonLd(cv, modified) {
     ...(cv.phone && { telephone: cv.phone }),
     ...(cv.location && { homeLocation: { '@type': 'Place', name: cv.location } }),
     sameAs: (cv.links || []).map((l) => l.url),
-    knowsLanguage: languages(cv).map(plain),
+    knowsLanguage: languages(cv).map((l) => l.language),
     knowsAbout: otherSkills(cv).flatMap((g) => g.items.map(plain)),
     alumniOf: (cv.education || []).map((e) => ({
       '@type': 'EducationalOrganization',
@@ -105,7 +112,7 @@ export function resumeJson(cv) {
       };
     }),
     skills: otherSkills(cv).map((g) => ({ name: plain(g.label), keywords: g.items.map(plain) })),
-    languages: languages(cv).map((l) => ({ language: plain(l), fluency: 'Fluent' })),
+    languages: languages(cv).map((l) => ({ language: l.language, fluency: l.level ? `${l.level} (CEFR)` : 'Fluent' })),
     interests: interests(cv).map((i) => ({ name: plain(i) })),
   };
 }
@@ -120,7 +127,7 @@ export function markdown(cv) {
   const contact = [
     cv.email,
     cv.phone,
-    cv.location,
+    place(cv),
     cv.url && `[${host(cv.url)}](${abs(cv)})`,
     ...(cv.links || []).map((l) => `[${l.label}](${l.url})`),
   ].filter(Boolean);
@@ -148,6 +155,7 @@ export function markdown(cv) {
     '',
     `${plain(cv.title)}  `,
     contact.join(' · '),
+    ...(status(cv).length ? ['', `**${status(cv).join(' · ')}**`] : []),
     '',
     cv.about || cv.bio,
     '',
@@ -171,7 +179,8 @@ export function llmsTxt(cv) {
   return [
     `# ${cv.name}`,
     '',
-    `> ${plain(cv.title)} based in ${cv.location}. ${plain(cv.bio)}`,
+    `> ${plain(cv.title)} based in ${place(cv)}. ${plain(cv.bio)}`,
+    ...(status(cv).length ? ['', `Availability: ${status(cv).join('. ')}.`] : []),
     '',
     plain(cv.about || ''),
     '',

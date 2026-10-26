@@ -136,6 +136,7 @@ export default function site(cv, { reload = '', modified = '' } = {}) {
     <main id="top">
       <section class="hero">
         ${cv.hero_image ? `<img class="hero-image" src="${esc(cv.hero_image)}" alt="" width="104" height="104">` : ''}
+        ${cv.availability ? `<p class="badge"><span class="dot-live" aria-hidden="true"></span>${md(cv.availability)}</p>` : ''}
         <p class="headline">${md(cv.headline || cv.title)}</p>
         ${cv.tagline ? `<p class="lead">${md(cv.tagline)}</p>` : ''}
         <a class="btn btn-soft" href="#experience">View Experience${icon('arrowRight', 16)}</a>
@@ -180,7 +181,7 @@ export default function site(cv, { reload = '', modified = '' } = {}) {
     </main>
 
     <footer class="footer">
-      <span>© ${year} ${esc(cv.name)}</span>
+      <span>© ${year} ${esc(cv.name)}${cv.legal?.address?.length ? ` · <a href="impressum.html">Impressum</a>` : ''}</span>
       <a href="#top">Back to Top${icon('arrowUp', 14)}</a>
     </footer>
   </div>

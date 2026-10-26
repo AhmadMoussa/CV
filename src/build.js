@@ -9,6 +9,7 @@ import { serve, pdfName } from './lib.js';
 import site from './site.js';
 import print from './print.js';
 import og from './og.js';
+import legal from './legal.js';
 import { resumeJson, markdown, llmsTxt, robotsTxt, sitemap } from './machine.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -37,6 +38,8 @@ for (const f of ['fonts.css', 'site.css', 'print.css']) fs.copyFileSync(path.joi
 write('index.html', site(cv, { reload, modified }));
 write('print.html', print(cv, { reload }));
 write('og.html', og(cv));
+const hasImpressum = Boolean(cv.legal?.address?.length);
+if (hasImpressum) write('impressum.html', legal(cv, { reload }));
 
 // 2. Machine-readable versions for search engines, AI agents and résumé tools
 write('cv.md', markdown(cv));
@@ -63,6 +66,8 @@ try {
   fs.rmSync(path.join(dist, 'og.html'));
 
   console.log(`✓ dist/index.html\n✓ dist/${path.basename(file)} (${pages} page${pages === 1 ? '' : 's'})\n✓ dist/og.png, cv.md, resume.json, llms.txt, robots.txt, sitemap.xml`);
+  if (hasImpressum) console.log('✓ dist/impressum.html');
+  else console.log('ℹ Impressum not published yet: add legal.address in cv.yaml');
 } finally {
   await browser.close();
   server.close();
