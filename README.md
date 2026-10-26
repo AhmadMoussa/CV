@@ -32,7 +32,7 @@ npm run build    # one-off build into dist/
 | `src/site.js`, `src/site.css` | Website template and styles |
 | `src/print.js`, `src/print.css` | PDF template and styles (A4) |
 | `src/build.js`, `src/dev.js` | Build script and live-reload dev server |
-| `public/` | Copied as-is to the site root (photo, hero image, logos, favicon, `CNAME`, …) |
+| `public/` | Copied as-is to the site root (photo, hero image, logos, favicon, …) |
 
 ## Photo and company logos
 
@@ -51,7 +51,21 @@ experience:
 2. In the repo, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
 3. The next push (or **Actions → Deploy → Run workflow**) publishes the site at `https://<user>.github.io/<repo>/`.
 
-To use your own domain, add a `public/CNAME` file containing the domain (e.g. `cv.gorillasun.com`) and point a DNS CNAME record at `<user>.github.io`.
+### Custom domain (ahmadmoussa.net)
+
+1. At the domain registrar, add these DNS records (and remove any parking or URL-redirect records for `@` and `www`):
+
+   | Type | Host | Value |
+   | --- | --- | --- |
+   | A | @ | 185.199.108.153 |
+   | A | @ | 185.199.109.153 |
+   | A | @ | 185.199.110.153 |
+   | A | @ | 185.199.111.153 |
+   | CNAME | www | ahmadmoussa.github.io |
+
+2. In the repo, go to **Settings → Pages → Custom domain**, enter `ahmadmoussa.net` and save. Once the DNS check passes, tick **Enforce HTTPS**.
+
+Because the site is deployed by a workflow, a `CNAME` file is not needed (GitHub ignores it).
 
 ## Notes
 
