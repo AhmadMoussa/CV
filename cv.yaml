@@ -24,19 +24,18 @@ bio: >-
 about: >-
   I'm a product manager and developer educator with a background in computer
   science and machine learning. At fxhash, a generative art marketplace, I led
-  a complete redesign of the platform with a team of five developers, after
-  starting out as editorial and community lead for its 50k+ audience. Since
-  2021 I've run Gorilla Sun, a publication about creative coding with 2,000+
-  subscribers, 200+ articles, and talks and workshops at universities and
-  events across Europe.
+  a complete platform redesign with a team of five developers, after starting
+  as editorial and community lead for its 50k+ audience. Since 2021 I've run
+  Gorilla Sun, a creative-coding publication with 2,000+ subscribers, 200+
+  articles, and talks and workshops across Europe.
 # Shown as a badge on the website and under your title on the PDF
 availability: Open to remote roles
-work_authorisation: Full work authorisation in Germany
+work_authorisation: German citizen (EU work authorisation)
 
 # Square image in /public (remove the line to show your initials instead)
 photo: photo.jpg
 # Also put the photo on the PDF (common in Germany, often left out for US/UK roles)
-pdf_photo: true
+pdf_photo: false
 # Square image in /public, shown as a circle above the headline (optional)
 hero_image: hero.webp
 
@@ -56,7 +55,7 @@ facts:
   - { icon: globe, text: "Open to remote roles" }
   - { icon: briefcase, text: "5+ years in product & developer education" }
   - { icon: languages, text: "English, German, French, Arabic (C2)" }
-  - { icon: check, text: "Full work authorisation in Germany" }
+  - { icon: check, text: "German citizen (EU work authorisation)" }
 
 # Social links: icon buttons above "Download CV" on the website, and
 # in the PDF header (add `pdf: false` to a link to leave it off the PDF).
@@ -85,9 +84,9 @@ experience:
         start: Jun 2025
         end: May 2026
         bullets:
-          - Led a complete, large-scale redesign of the fxhash platform from concept to launch, managing a team of **5 developers**.
+          - Led a complete, large-scale redesign of the fxhash platform, managing a team of **5 developers**.
           - Coordinated the relaunch with marketing for a marketplace with sales in the **thousands**.
-          - Owned the roadmap, product requirements and user flows, aligning engineering, design and marketing with business goals.
+          - Owned the roadmap, requirements and user flows, aligning engineering, design and marketing.
           - Worked hands-on with engineers on the full-stack implementation.
       - title: Editorial & Community Lead
         start: Sep 2024
@@ -106,7 +105,7 @@ experience:
     roles:
       - title: Founder & Developer Educator
         bullets:
-          - Built and run an independent publication teaching creative coding and generative art to developers and artists worldwide.
+          - Built and run an independent publication teaching creative coding and generative art to developers.
           - Write tutorials, long-form articles, interviews and a newsletter on JavaScript, p5.js and generative systems.
           - "**Talks & Workshops:** Zürcher Hochschule der Künste (2023), Universität Bielefeld (2024), Wintercircus Ghent (2024), Trillitech London (2024)"
         # Shown as stat cards on the website, as a "Key Results" line on the PDF
@@ -137,9 +136,9 @@ education:
 # Shown as tag groups on the website, as one line each on the PDF.
 skills:
   - label: Product
-    items: [Product strategy, Roadmapping, Requirements & user flows, Ideation, System design, Team leadership, Go-to-market]
+    items: [Product strategy, Roadmapping, Requirements & user flows, System design, Team leadership, Go-to-market]
   - label: Developer relations
-    items: [Technical writing, Developer education, Public speaking & workshops, Community building, Content strategy, Copywriting, Video editing]
+    items: [Technical writing, Developer education, Public speaking, Workshops, Community building, Content strategy, Video editing]
   - label: Technologies
     items: [JavaScript, React, Next.js, Python, Git, Processing, p5.js]
   - label: Languages (CEFR)
@@ -153,5 +152,5 @@ skills:
 # publish your home address.
 legal:
   address:
-    # - Musterstraße 1
-    # - 40223 Düsseldorf
+    - Brachtstraße 5
+    - 40223 Düsseldorf

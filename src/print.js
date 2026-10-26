@@ -73,7 +73,7 @@ export default function print(cv, { reload = '' } = {}) {
     <div>
       <h1>${esc(cv.name)}</h1>
       <p class="title">${md(cv.title)}</p>
-      <p class="contact">${contact.map((c) => `<span class="nw">${c}</span>`).join('<span class="sep">|</span>')}</p>
+      <p class="contact">${contact.map((c) => `<span class="nw">${c}</span>`).join('<span class="sep">|</span><wbr>')}</p>
       ${status.length ? `<p class="status">${status.join('<span class="sep">·</span>')}</p>` : ''}
     </div>
     ${cv.pdf_photo && cv.photo ? `<img class="photo" src="${esc(cv.photo)}" alt="${esc(cv.name)}">` : ''}
