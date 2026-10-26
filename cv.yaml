@@ -25,9 +25,8 @@ about: >-
   educational platform about creative coding and generative art read by
   thousands every month.
 
-# Optional: drop a square image into /public and reference it here,
-# e.g. photo: photo.jpg — otherwise your initials are shown.
-photo:
+# Square image in /public (remove the line to show your initials instead)
+photo: photo.jpg
 
 # Line under "Let's Connect" at the bottom of the website
 contact_note: Happy to talk product, creative coding, or new opportunities.
@@ -35,7 +34,7 @@ contact_note: Happy to talk product, creative coding, or new opportunities.
 location: Düsseldorf, Germany
 email: ahmad@gorillasun.com
 phone: +49 1575 0606799
-website: https://www.gorillasun.de
+website: https://gorillasun.com
 
 # Small facts shown under your bio in the website sidebar.
 # icon: pin | briefcase | languages | globe | mail
@@ -46,16 +45,18 @@ facts:
 
 # Social links (website sidebar + PDF header). Uncomment / add your own.
 links:
-  - { label: Gorilla Sun, url: "https://www.gorillasun.de" }
+  - { label: Gorilla Sun, url: "https://gorillasun.com" }
   # - { label: GitHub, url: "https://github.com/your-handle" }
   # - { label: LinkedIn, url: "https://www.linkedin.com/in/your-handle" }
   # - { label: X, url: "https://x.com/your-handle" }
 
 # ─── Work experience ─────────────────────────────────────────
 # Each company can hold several roles (newest first).
+# logo: optional square image in /public, otherwise the first letter is shown.
 experience:
   - company: fxhash
     url: https://www.fxhash.xyz
+    logo: logos/fxhash.png
     location: Remote
     start: Sept 2024
     end: May 2026
@@ -80,7 +81,8 @@ experience:
           - Developed content strategy to grow engagement and handled community interaction.
 
   - company: Gorilla Sun
-    url: https://www.gorillasun.de
+    url: https://gorillasun.com
+    logo: logos/gorillasun.svg
     location: Remote
     start: April 2021
     end: Present

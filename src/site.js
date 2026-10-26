@@ -76,6 +76,7 @@ export default function site(cv, { reload = '' } = {}) {
   <meta property="og:description" content="${esc(plain(cv.bio))}">
   <meta property="og:type" content="website">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>try { const t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch {}</script>
   <link rel="stylesheet" href="fonts.css">
   <link rel="stylesheet" href="site.css">
 </head>
@@ -109,13 +110,16 @@ export default function site(cv, { reload = '' } = {}) {
           <a href="#education">Education</a>
           <a href="#skills">Skills</a>
         </nav>
-        <a class="btn btn-dark btn-sm" href="#contact">${icon('message', 14)}Contact Me</a>
+        <div class="nav-actions">
+          <button class="btn btn-sm btn-square theme-toggle" type="button" aria-label="Toggle dark mode">${icon('moon', 15, 'moon')}${icon('sun', 15, 'sun')}</button>
+          <a class="btn btn-dark btn-sm" href="#contact">${icon('message', 14)}Contact Me</a>
+        </div>
       </div>
     </header>
 
     <main id="top">
       <section class="hero">
-        <canvas class="sketch" width="176" height="176" aria-label="Generative Truchet pattern — click to regenerate" role="img"></canvas>
+        <canvas class="sketch" width="120" height="120" aria-label="Generative Truchet pattern — click to regenerate" role="img"></canvas>
         <h1>${md(cv.headline || cv.title)}</h1>
         ${cv.tagline ? `<p class="lead">${md(cv.tagline)}</p>` : ''}
         <a class="btn btn-soft" href="#experience">View Experience${icon('arrowRight', 16)}</a>
@@ -169,6 +173,13 @@ export default function site(cv, { reload = '' } = {}) {
   <script>
     const nav = document.querySelector('.nav');
     addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
+
+    const root = document.documentElement;
+    document.querySelector('.theme-toggle').addEventListener('click', () => {
+      const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+      root.dataset.theme = dark ? 'light' : 'dark';
+      try { localStorage.setItem('theme', root.dataset.theme); } catch {}
+    });
   </script>${reload}
 </body>
 </html>

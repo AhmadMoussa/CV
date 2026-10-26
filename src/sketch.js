@@ -5,7 +5,7 @@
   const ctx = canvas.getContext('2d');
   const css = getComputedStyle(document.documentElement);
   const accent = css.getPropertyValue('--accent').trim();
-  const bg = css.getPropertyValue('--bg').trim();
+  const onAccent = css.getPropertyValue('--on-accent').trim();
 
   const arc = (x, y, r, a) => {
     ctx.beginPath();
@@ -27,7 +27,7 @@
     ctx.fillStyle = accent;
     ctx.fill();
     ctx.clip();
-    ctx.strokeStyle = bg;
+    ctx.strokeStyle = onAccent;
     ctx.lineWidth = size / 30;
     for (let y = 0; y < n; y++) {
       for (let x = 0; x < n; x++) {

@@ -35,15 +35,15 @@ npm run build    # one-off build into dist/
 | `src/build.js`, `src/dev.js` | Build script and live-reload dev server |
 | `public/` | Copied as-is to the site root (favicon, photo, `CNAME`, …) |
 
-## Adding a photo or company logos
+## Photo and company logos
 
-Drop the image into `public/` and reference it in `cv.yaml`:
+Images live in `public/` and are referenced from `cv.yaml`:
 
 ```yaml
-photo: photo.jpg            # replaces the initials in the sidebar
+photo: photo.jpg                 # sidebar photo (remove to show initials)
 experience:
   - company: fxhash
-    logo: fxhash.png         # replaces the letter tile in the timeline
+    logo: logos/fxhash.png       # square tile in the timeline (remove to show the first letter)
 ```
 
 ## Publishing on GitHub Pages (one-time setup)
@@ -52,9 +52,10 @@ experience:
 2. In the repo, go to **Settings → Pages → Build and deployment** and set **Source** to **GitHub Actions**.
 3. The next push (or **Actions → Deploy → Run workflow**) publishes the site at `https://<user>.github.io/<repo>/`.
 
-To use your own domain, add a `public/CNAME` file containing the domain (e.g. `cv.gorillasun.de`) and point a DNS CNAME record at `<user>.github.io`.
+To use your own domain, add a `public/CNAME` file containing the domain (e.g. `cv.gorillasun.com`) and point a DNS CNAME record at `<user>.github.io`.
 
 ## Notes
 
 - Fonts (Geist and Habibi) are self-hosted from `@fontsource`, so the site makes no requests to Google Fonts.
-- Icons are from [Lucide](https://lucide.dev) (ISC).
+- The site follows the visitor's light/dark system setting, with a toggle in the nav. The PDF is always light.
+- Icons are from [Lucide](https://lucide.dev) (ISC). The Gorilla Sun sun is from [Font Awesome Free](https://fontawesome.com/license/free) (CC BY 4.0).
