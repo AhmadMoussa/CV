@@ -1,0 +1,58 @@
+@page { size: A4; margin: 14mm 16mm; }
+
+:root {
+  --ink: #1a0a06;
+  --muted: #6b5d57;
+  --line: #e4dcd6;
+  --accent: #e55639;
+}
+
+* { box-sizing: border-box; }
+html { background: #fff; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font: 400 9.4pt/1.42 'Geist', system-ui, sans-serif;
+  letter-spacing: -0.01em;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+/* On screen (npm run dev → /print.html), show it as a sheet of paper */
+@media screen {
+  html { background: #eee; }
+  body { width: 210mm; min-height: 297mm; margin: 24px auto; padding: 14mm 16mm; background: #fff; box-shadow: 0 1px 8px rgba(0, 0, 0, 0.12); }
+}
+
+a { color: inherit; text-decoration: none; }
+p, ul, h1, h2 { margin: 0; }
+strong { font-weight: 600; }
+
+header { padding-bottom: 10pt; border-bottom: 1px solid var(--ink); }
+h1 { font: 400 25pt/1.1 'Habibi', Georgia, serif; letter-spacing: -0.02em; }
+.title { font-size: 11pt; color: var(--muted); margin-top: 2pt; }
+.contact { margin-top: 6pt; font-size: 9pt; }
+.contact .sep { color: var(--line); margin: 0 6pt; }
+
+.summary { margin-top: 10pt; color: var(--muted); }
+
+section { margin-top: 13pt; }
+h2 {
+  font: 600 8.2pt/1 'Geist', sans-serif; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--accent); padding-bottom: 4pt; margin-bottom: 7pt; border-bottom: 1px solid var(--line);
+}
+
+.entry { break-inside: avoid; }
+.entry + .entry { margin-top: 9pt; }
+.row { display: flex; justify-content: space-between; align-items: baseline; gap: 12pt; }
+.org { font: 400 12pt/1.3 'Habibi', Georgia, serif; }
+.position { font-weight: 500; }
+.aside { color: var(--muted); font-size: 9pt; white-space: nowrap; }
+.role + .role { margin-top: 6pt; }
+.desc { color: var(--muted); margin-top: 1pt; }
+
+ul { padding-left: 13pt; margin-top: 2pt; }
+li { margin-top: 1.5pt; }
+li::marker { color: var(--muted); }
+li ul { list-style: circle; margin-top: 0; }
+
+.skills { padding-left: 13pt; }

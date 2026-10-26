@@ -1,0 +1,5 @@
+/* Self-hosted fonts (copied from @fontsource at build time — no Google Fonts requests) */
+@font-face { font-family: 'Geist'; font-weight: 400; font-display: swap; src: url(fonts/geist-latin-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Geist'; font-weight: 500; font-display: swap; src: url(fonts/geist-latin-500-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Geist'; font-weight: 600; font-display: swap; src: url(fonts/geist-latin-600-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Habibi'; font-weight: 400; font-display: swap; src: url(fonts/habibi-latin-400-normal.woff2) format('woff2'); }

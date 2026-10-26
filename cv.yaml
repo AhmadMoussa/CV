@@ -1,0 +1,128 @@
+# ─────────────────────────────────────────────────────────────
+#  This file is the single source of truth for the website AND
+#  the downloadable PDF. Edit it, push, and both update together.
+#
+#  Inline formatting supported in any text field:
+#    **bold**   *italic*   [link text](https://example.com)
+# ─────────────────────────────────────────────────────────────
+
+name: Ahmad Moussa
+title: Product Manager & Creative Coder
+# Large heading + sub-heading at the top of the website
+headline: Product, code & generative art
+tagline: >-
+  Building products and communities at the intersection of
+  programming and digital art.
+# Short blurb in the website sidebar
+bio: >-
+  Product manager, educator and creative coder with a background
+  in machine learning and a love for generative systems.
+# "About" section on the website and summary line on the PDF
+about: >-
+  I'm a product manager and creative coder with a background in computer
+  science and machine learning. Most recently I led product at fxhash, a
+  generative art marketplace, and since 2021 I've run Gorilla Sun, an
+  educational platform about creative coding and generative art read by
+  thousands every month.
+
+# Optional: drop a square image into /public and reference it here,
+# e.g. photo: photo.jpg — otherwise your initials are shown.
+photo:
+
+# Line under "Let's Connect" at the bottom of the website
+contact_note: Happy to talk product, creative coding, or new opportunities.
+
+location: Düsseldorf, Germany
+email: ahmad@gorillasun.com
+phone: +49 1575 0606799
+website: https://www.gorillasun.de
+
+# Small facts shown under your bio in the website sidebar.
+# icon: pin | briefcase | languages | globe | mail
+facts:
+  - { icon: pin, text: "Düsseldorf, Germany" }
+  - { icon: briefcase, text: "5+ years in product & content" }
+  - { icon: languages, text: "Speaks EN · DE · FR · AR" }
+
+# Social links (website sidebar + PDF header). Uncomment / add your own.
+links:
+  - { label: Gorilla Sun, url: "https://www.gorillasun.de" }
+  # - { label: GitHub, url: "https://github.com/your-handle" }
+  # - { label: LinkedIn, url: "https://www.linkedin.com/in/your-handle" }
+  # - { label: X, url: "https://x.com/your-handle" }
+
+# ─── Work experience ─────────────────────────────────────────
+# Each company can hold several roles (newest first).
+experience:
+  - company: fxhash
+    url: https://www.fxhash.xyz
+    location: Remote
+    start: Sept 2024
+    end: May 2026
+    description: >-
+      Generative art marketplace enabling artists to publish on-chain,
+      code-based artworks to a global collector base.
+    roles:
+      - title: Product Manager
+        start: June 2025
+        end: May 2026
+        bullets:
+          - text: Led ideation, design, and delivery
+            sub:
+              - Owned product lifecycle from concept to launch across cross-functional teams (engineering, design, marketing).
+              - Defined product requirements, user flows, and roadmap aligned with business goals.
+              - Collaborated closely with engineers on full-stack implementation.
+      - title: Editorial & Community Lead
+        start: Sept 2024
+        end: June 2025
+        bullets:
+          - Created and managed editorial content for a 50k+ audience across social platforms.
+          - Developed content strategy to grow engagement and handled community interaction.
+
+  - company: Gorilla Sun
+    url: https://www.gorillasun.de
+    location: Remote
+    start: April 2021
+    end: Present
+    roles:
+      - title: Founder, Educator, Programming & Writing
+        bullets:
+          - Built a leading educational platform focused on creative coding and generative art.
+          - Produced technical content bridging programming and digital art for a global audience.
+          - Developed tutorials, long-form articles, interviews, and newsletters on JavaScript, generative systems, and visual art.
+          - "**Talks & Workshops:** Zürcher Hochschule der Künste (2023), Universität Bielefeld (2024), Wintercircus Ghent (2024), Trillitech London (2024)"
+        # Shown as stat cards on the website, as a "Key Results" line on the PDF
+        results:
+          - { value: "2000+", label: subscribed monthly readers }
+          - { value: "1M+", label: impressions online }
+          - { value: "200+", label: articles & newsletters published }
+
+# ─── Education ───────────────────────────────────────────────
+education:
+  - school: Waseda University
+    degree: Master of Engineering, Computer Science
+    location: Tokyo, Japan
+    date: March 2021
+    bullets:
+      - Machine learning and neural networks for multimedia applications (computer vision, generative sound).
+      - "**Papers published:** *Generating and Extraction of Color Palettes with Adversarial Variational Auto-encoders* (ICICT 2021, Springer Nature), *Audio Translation with Conditional Generative Adversarial Networks* (ICAIIC 2020, IEEE)"
+
+  - school: American University of Beirut
+    degree: Bachelor of Science, Computer Science
+    location: Beirut, Lebanon
+    date: April 2018
+    bullets:
+      - Software architecture & development, data structures, algorithms, Java, C/C++.
+      - Semester abroad at Concordia University (Montreal, Canada, 2017).
+
+# ─── Skills & interests ──────────────────────────────────────
+# Shown as tag groups on the website, as one line each on the PDF.
+skills:
+  - label: Technologies
+    items: [JavaScript, React, Next.js, Python, Git, Processing, p5.js]
+  - label: Skills
+    items: [Ideation, System Design, Strategic Planning, Marketing, Copywriting, Music Production, Video Editing]
+  - label: Languages (fluent)
+    items: [English, German, French, Arabic]
+  - label: Interests
+    items: [Weightlifting, Music, Programming, Board & Video Games, "*The Office*"]
