@@ -1,5 +1,5 @@
 // Website template — renders cv.yaml into index.html
-import { esc, md, plain, range, initials, host, icon, list, pdfName } from './lib.js';
+import { esc, md, plain, range, initials, icon, linkIcon, list, pdfName } from './lib.js';
 
 const bullets = (items) =>
   items?.length
@@ -93,7 +93,7 @@ export default function site(cv, { reload = '' } = {}) {
       ${list(cv.facts, (f) => `<li>${icon(f.icon, 15)}<span>${md(f.text)}</span></li>`)}
     </ul>
     <div class="sidebar-bottom">
-      ${cv.links?.length ? `<ul class="links">${list(cv.links, (l) => `<li><a href="${esc(l.url)}">${esc(l.label)}${icon('arrowUpRight', 13)}</a></li>`)}</ul>` : ''}
+      ${cv.links?.length ? `<ul class="socials">${list(cv.links, (l) => `<li><a href="${esc(l.url)}" aria-label="${esc(l.label)}" title="${esc(l.label)}">${linkIcon(l.icon, 17)}</a></li>`)}</ul>` : ''}
       <div class="cta">
         <a class="btn btn-dark" href="${pdf}" download>${icon('download', 16)}Download CV</a>
         <a class="btn btn-square" href="mailto:${esc(cv.email)}" aria-label="Email ${esc(cv.name)}">${icon('mail', 16)}</a>

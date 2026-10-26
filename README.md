@@ -57,4 +57,4 @@ To use your own domain, add a `public/CNAME` file containing the domain (e.g. `c
 
 - Fonts (Geist and Habibi) are self-hosted from `@fontsource`, so the site makes no requests to Google Fonts.
 - The site follows the visitor's light/dark system setting, with a toggle in the nav. Colours match [gorillasun.com](https://gorillasun.com). The PDF is always light.
-- Icons are from [Lucide](https://lucide.dev) (ISC). The Gorilla Sun sun is from [Font Awesome Free](https://fontawesome.com/license/free) (CC BY 4.0).
+- Icons are from [Lucide](https://lucide.dev) (ISC). The sun and the social icons are from [Font Awesome Free](https://fontawesome.com/license/free) (CC BY 4.0).

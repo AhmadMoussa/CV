@@ -8,7 +8,7 @@
   --line: rgba(20, 18, 16, 0.13);
   --soft: #d9d3ca;
   --hover: #d1cbc2;
-  --accent: #d45800;
+  --accent: #d45800; /* the "SUN" orange on gorillasun.com, used in both themes */
   --on-accent: #f1eeea;
   --serif: 'Habibi', Georgia, serif;
   --sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
@@ -26,7 +26,6 @@
     --line: rgba(236, 233, 228, 0.12);
     --soft: #1c1a17;
     --hover: #241f1a;
-    --accent: #d85900;
   }
 }
 :root[data-theme='dark'] {
@@ -38,7 +37,6 @@
   --line: rgba(236, 233, 228, 0.12);
   --soft: #1c1a17;
   --hover: #241f1a;
-  --accent: #d85900;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -95,9 +93,9 @@ p { text-wrap: pretty; }
 .facts li { display: flex; align-items: center; gap: 10px; }
 .facts .icon { color: var(--muted); }
 .sidebar-bottom { margin-top: auto; display: grid; gap: 16px; }
-.links { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 14px; }
-.links a { display: inline-flex; align-items: center; gap: 2px; color: var(--muted); }
-.links a:hover { color: var(--ink); }
+.socials { list-style: none; padding: 0; display: flex; gap: 2px; margin-left: -10px; }
+.socials a { width: 36px; height: 36px; display: grid; place-items: center; color: var(--muted); transition: color 0.15s, background 0.15s; }
+.socials a:hover { color: var(--ink); background: var(--soft); }
 .cta { display: flex; gap: 8px; }
 .cta .btn-dark { flex: 1; }
 

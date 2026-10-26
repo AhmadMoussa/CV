@@ -45,12 +45,14 @@ facts:
   - { icon: briefcase, text: "5+ years in product & content" }
   - { icon: languages, text: "Speaks EN · DE · FR · AR" }
 
-# Social links (website sidebar + PDF header). Uncomment / add your own.
+# Social links: icon buttons above "Download CV" on the website, and
+# in the PDF header (add `pdf: false` to a link to leave it off the PDF).
+# icon: sun | x | instagram | linkedin (anything else shows a globe)
 links:
-  - { label: Gorilla Sun, url: "https://gorillasun.com" }
-  # - { label: GitHub, url: "https://github.com/your-handle" }
-  # - { label: LinkedIn, url: "https://www.linkedin.com/in/your-handle" }
-  # - { label: X, url: "https://x.com/your-handle" }
+  - { label: Gorilla Sun, url: "https://gorillasun.com", icon: sun }
+  - { label: X, url: "https://x.com/gorillasu", icon: x }
+  - { label: Instagram, url: "https://www.instagram.com/gorilla_sun_blog/", icon: instagram }
+  - { label: LinkedIn, url: "https://www.linkedin.com/in/ahmad-moussa-4b1892116/", icon: linkedin }
 
 # ─── Work experience ─────────────────────────────────────────
 # Each company can hold several roles (newest first).

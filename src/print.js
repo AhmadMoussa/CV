@@ -53,7 +53,7 @@ export default function print(cv, { reload = '' } = {}) {
     cv.phone && `<a href="tel:${esc(cv.phone.replace(/[^\d+]/g, ''))}">${esc(cv.phone)}</a>`,
     cv.location && esc(cv.location),
     cv.website && `<a href="${esc(cv.website)}">${esc(host(cv.website))}</a>`,
-    ...(cv.links || []).filter((l) => l.url !== cv.website).map((l) => `<a href="${esc(l.url)}">${esc(host(l.url))}</a>`),
+    ...(cv.links || []).filter((l) => l.url !== cv.website && l.pdf !== false).map((l) => `<a href="${esc(l.url)}">${esc(l.label)}</a>`),
   ].filter(Boolean);
 
   return `<!doctype html>
